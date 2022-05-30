@@ -5,5 +5,13 @@ abstract  class Employee(
     cpf: String,
     val wage: Double
 ) : People(name, cpf) {
-    abstract fun AuxiliaryCalculus()
+    protected abstract fun AuxiliaryCalculus(): Double
+
+    override fun toString(): String = """
+        Name: $name
+        CPF: $cpf
+        Wage: $wage
+        Help: ${AuxiliaryCalculus()}
+    """.trimIndent()
+
 }
